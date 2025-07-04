@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tour & Travel</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Tour & Travel
+    </title>
 
-  <link
+    <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
@@ -21,216 +23,520 @@
   </head>
   <body>
 
-<!--header section starts-->
-<header>
-  <div id="menu-bar" class="fas fa-bars"></div> 
 
-  <header class="header">
-    <a href="#" class="logo"><span>T</span>our De'</a>
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Book</a>
-      <a href="#">Packages</a>
-      <a href="#">Book</a>
-    </nav>
+<!-- Navbar Row 1 -->
+<header class="navbar">
+  <div class="navbar-row row1">
+    <div class="logo">TOUR <span>DE'</span></div>
 
-    <div class="icons">
-      <i class="fas fa-search" id="search-btn"></i>
-      <i class="fas fa-user" id="login-btn"></i>
+    <div class="search-bar-container">
+      <input type="text" placeholder="Search here..." />
     </div>
 
-    <form action="" class="search-bar-container">
-      <input type="search" id="search-bar" placeholder="search here..." />
-      <label for="search-bar" class="fas fa-search"></label>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#">Discover</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Traveler's Choice</a></li>
+          <li><a href="#">Travel Stories</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Trips</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">View My Trips</a></li>
+          <li><a href="#">Start A New Trip</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Review</a>
+        <ul class="dropdown-menu"> 
+          <li><a href="#">Write A Review</a></li>
+          <li><a href="#">Share A Tip</a></li>
+          <li><a href="#">Post Photos</a></li>
+        </ul>
+      </li>
+      <li><button class="sign-in" id="login-btn">Sign In</button></li>
+    </ul>
+  </div> 
+
+  <!-- Navbar Row 2 -->
+  <div class="navbar-row row2">
+   <ul class="secondary-links">
+  <li><a href="hotel.html">Hotels</a></li> 
+  <li><a href="Restaurants.html">Flights</a></li>
+  <li><a href="Restaurants.html">Restaurants</a></li>
+  <li><a href="Rental cars.html">Rental Cars</a></li>
+  <li><a href="Things to do.html">Things To Do</a></li>
+  <li><a href="Documents.html">Documents</a></li>
+</ul>
+
+  </div>
+</header>
+
+<!-- Sign In Modal -->
+<div class="login-form-container" id="login-form">
+  <div class="login-box">
+    <button id="form-close" class="close-btn">&times;</button>
+
+    <button class="google-btn">
+      <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon" />
+      Login with Google
+    </button>
+
+    <div class="divider"><span>OR</span></div>
+
+    <h2>Sign In</h2>
+
+    <form>
+      <div class="input-group">
+        <label><i class="fas fa-envelope"></i></label>
+        <input type="email" placeholder="someone@example.com" required />
+      </div>
+
+      <div class="input-group">
+        <label><i class="fas fa-lock"></i></label>
+        <input type="password" placeholder="some@pass#123" required />
+        <i class="fas fa-eye show-password"></i>
+      </div>
+
+      <div class="forgot-pass">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Sign In</button>
+
+      <p class="signup-text">Don't have an Account? <a href="#">Sign Up</a></p>
     </form>
-  </header> 
-
-<!--header section ends-->
-
- <!-- login form container  -->
-
- <div class="login-form-container">
-  <i class="fas fa-times" id="form-close"></i>
-
-  <form action="">
-    <h3>login</h3>
-    <input type="email" class="box" placeholder="enter your email" />
-    <input type="password" class="box" placeholder="enter your password" />
-    <input type="submit" value="login now" class="btn" />
-    <input type="checkbox" id="remember" />
-    <label for="remember">remember me</label>
-    <p>forget password? <a href="#">click here</a></p>
-    <p>don't have and account? <a href="#">register now</a></p>
-  </form>
+  </div>
 </div>
 
+    <!-- home section starts  -->
 
-  <!-- home section starts  -->
-  <section class="home" id="home">
-    <div class="content">
-      <h3>Adventure is out there</h3>
-      <p>Join us on new journeys </p>
-      <a href="#" class="btn">discover more</a>
-    </div>
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Adventure is out there</h3>
+        <p>Join us on new journeys</p>
+        <a href="#" class="btn">discover more</a>
+      </div>
 
-    <div class="controls">
-      <span class="vid-btn active" data-src="Tour_videos_1.mp4"></span>
-      <span class="vid-btn" data-src="Tour_videos_2.mp4"></span>
-      <span class="vid-btn" data-src="Tour_videos_3.mp4"></span>
-      <span class="vid-btn" data-src="Tour_videos_4.mp4"></span>
-      <span class="vid-btn" data-src="Tour_videos_5.mp4"></span>
-    </div>
+       <div class="controls">
+        <span class="vid-btn active" data-src="Tour_videos_1.mp4"></span>
+        <span class="vid-btn" data-src="Tour_videos_2.mp4"></span>
+        <span class="vid-btn" data-src="Tour_videos_3.mp4"></span>
+        <span class="vid-btn" data-src="Tour_videos_4.mp4"></span>
+        <span class="vid-btn" data-src="Tour_videos_5.mp4"></span>
+      </div>
+      <div class="video-container">
+        <video
+          src="Tour_videos_1.mp4"
+          id="video-slider"
+          loop
+          autoplay
+          muted
+        ></video>
+      </div>
+    </section>
+    <!-- home section ends --> 
 
-    <div class="video-container">
-      <video
-        src= "Tour_videos_1.mp4" id="video-slider" loop autoplay muted></video>
-    </div>
-  </section>
-
-  <!-- home section ends -->
-   
-
-  <!-- book section starts  -->
-
+    <!-- book section starts -->
 <section class="book" id="book">
   <h1 class="heading">
-    <span>b</span>
-    <span>o</span>
-    <span>o</span>
-    <span>k</span>
-    <span class="space"></span>
-    <span>n</span>
-    <span>o</span>
-    <span>w</span>
-  </h1> 
-
-    <form action="">
-      <div class="inputBox">
-        <h3>where to</h3>
-        <input type="text" placeholder="place name" />
-      </div>
-      <div class="inputBox">
-        <h3>how many</h3>
-        <input type="number" placeholder="number of guests" />
-      </div>
-      <div class="inputBox">
-        <h3>arrivals</h3>
-        <input type="date" />
-      </div>
-      <div class="inputBox">
-        <h3>leaving</h3>
-        <input type="date" />
-      </div>
-      <input type="submit" class="btn" value="book now" />
-    </form>
-  </div>
-</section>
-
-<!-- book section ends -->
-
- <!-- Packages Section Starts -->
-<section class="packages" id="packages">
-  <h1 class="heading">
-    <span>P</span>
-    <span>A</span>
-    <span>C</span>
-    <span>K</span>
-    <span>A</span>
-    <span>G</span>
-    <span>E</span>
-    <span>S</span>
+    BOOK NOW 
   </h1>
 
-  <div class="box-container">
-    <!-- London Package -->
-    <div class="box">
-      <img src="london.png" alt="London" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> London </h3>
-        <p>Explore London's rich history and world-famous landmarks.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
-      </div>
+  <form action="">
+    <div class="inputBox">
+      <h3>Destination</h3>
+      <input type="text" placeholder="place name" />
+    </div>
+    <div class="inputBox">
+      <h3>Guests</h3>
+      <input type="number" placeholder="number of guests" />
+    </div>
+    <div class="inputBox">
+      <h3>arrivals</h3>
+      <input type="date" />
+    </div>
+    <div class="inputBox">
+      <h3>leaving</h3>
+      <input type="date" />
     </div>
 
-    <!-- Hawaii Package -->
-    <div class="box">
-      <img src="Hawaii.png" alt="Hawaii" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> Hawaii </h3>
-        <p>Enjoy breathtaking beaches and the stunning natural beauty of Hawaii.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
-      </div>
+    <!-- Intended Users dropdown -->
+    <div class="inputBox">
+      <h3>Intended User Type</h3>
+      <select>
+        <option value="">Select user type</option>
+        <option value="solo">Solo Traveler</option>
+        <option value="group">Travel Group</option>
+        <option value="business">Business Traveler</option>
+        <option value="adventure">Adventure Tourist</option>
+      </select>
     </div>
 
-    <!-- Sydney Package -->
-    <div class="box">
-      <img src="sydney.png" alt="Sydney" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> Sydney </h3>
-        <p>Experience the stunning harbor and lively culture of Sydney.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
-      </div>
-    </div>
+    <input type="submit" class="btn" value="book now" />
+  </form>
+</section>
+<!-- book section ends -->
 
-    <!-- Paris Package -->
-    <div class="box">
-      <img src="paris.png" alt="Paris" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> Paris </h3>
-        <p>Indulge in fine art, exquisite cuisine, and the romance of Paris.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+     <!-- packages section starts -->
+    <section class="packages" id="packages">
+      <h1 class="heading">
+        PACKAGES 
+      </h1>
+      <div class="box-container">
+        <!-- London Package -->
+        <div class="box">
+          <img src="london.png" alt="London" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> London</h3>
+            <p>Explore London's rich history and world-famous landmarks.</p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
         </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
-      </div>
-    </div>
+        <!-- Hawaii Package -->
+        <div class="box">
+          <img src="Hawaii.png" alt="Hawaii" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Hawaii</h3>
+            <p>
+              Enjoy breathtaking beaches and the stunning natural beauty of
+              Hawaii.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
+        </div>
 
-    <!-- Tokyo Package -->
-    <div class="box">
-      <img src="Tokyo.png" alt="Tokyo" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> Tokyo </h3>
-        <p>Immerse yourself in Tokyo’s futuristic skyline and rich traditions.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        <!-- Sydney Package -->
+        <div class="box">
+          <img src="sydney.png" alt="Sydney" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Sydney</h3>
+            <p>Experience the stunning harbor and lively culture of Sydney.</p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
         </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
-      </div>
-    </div>
 
-    <!-- Egypt Package -->
-    <div class="box">
-      <img src="Egypt.png" alt="Egypt" />
-      <div class="content">
-        <h3><i class="fas fa-map-marker-alt"></i> Egypt </h3>
-        <p>Explore the wonders of the pyramids and the ancient history of Egypt.</p>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        <!-- Paris Package -->
+        <div class="box">
+          <img src="paris.png" alt="Paris" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Paris</h3>
+            <p>
+              Indulge in fine art, exquisite cuisine, and the romance of Paris.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
         </div>
-        <div class="price">$90.00 <span>$120.00</span></div>
-        <a href="#" class="btn">Book Now</a>
+
+        <!-- Tokyo Package -->
+        <div class="box">
+          <img src="Tokyo.png" alt="Tokyo" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Tokyo</h3>
+            <p>
+              Immerse yourself in Tokyo’s futuristic skyline and rich
+              traditions.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
+        </div>
+
+        <!-- Egypt Package -->
+        <div class="box">
+          <img src="Egypt.png" alt="Egypt" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i> Egypt</h3>
+            <p>
+              Explore the wonders of the pyramids and the ancient history of
+              Egypt.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="far fa-star"></i>
+            </div>
+            <div class="price">$90.00 <span>$120.00</span></div>
+            <a href="#" class="btn">Book Now</a>
+          </div>
+        </div>
       </div>
+    </section>
+    <!-- packages section ends -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+    <!-- services section starts  -->
+
+    <section class="services" id="services">
+      <h1 class= "heading">
+      SERVICES 
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-hotel"></i>
+          <h3>affordable hotels</h3>
+          <p>
+          Find budget-friendly stays without compromising comfort. Explore top-rated hotels that suit your travel style and wallet.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-utensils"></i>
+          <h3>food and drinks</h3>
+          <p>
+            Taste the world on your plate! Discover local flavors, street food gems, and must-try drinks from every corner of the globe.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullhorn"></i>
+          <h3>safty guide</h3>
+          <p>
+            Travel smart with our up-to-date safety tips, destination alerts, and traveler advice to keep your journey smooth and secure.
+          </p>
+        </div>
+        <div class="box"><title>Hotel Search Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .hotel-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .hotel-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .hotel-card:hover {
+      transform: scale(1.03);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .hotel-card .details {
+      padding: 15px;
+    }
+
+    .hotel-card .details h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .hotel-card .details p {
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Search Results</h2>
+  <div class="hotel-list" id="results"></div>
+
+          <i class="fas fa-globe-asia"></i>
+          <h3>around the world</h3>
+          <p>
+            From iconic cities to hidden gems, explore destinations across continents with insights and inspiration for your next trip.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-plane"></i>
+          <h3>fastest travel</h3>
+          <p>
+            Maximize your time with our guide to the quickest routes, fastest transport options, and time-saving travel hacks
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-hiking"></i>
+          <h3>adventures</h3>
+          <p>
+           Fuel your thrill with epic adventures—from mountain treks to deep-sea dives. Get ready for unforgettable experiences!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- services section ends -->
+
+    <!-- review section starts -->
+<section class="review" id="review">
+  <h1 class="heading">
+      REVIEWS 
+  </h1>
+
+  <div class="swiper review-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="pic1.jpeg" alt="" />
+          <h3>Mariam Hossain</h3>
+          <p>
+            Booking with Tour DE was effortless and smooth. Everything from flights to hotel reservations was taken care of perfectly. Highly recommended!
+          </p>  
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="pic2.jpeg" alt="" />
+          <h3>Tanisha Rahman</h3>
+          <p>
+            As a solo female traveler, I felt completely safe and well-supported throughout the entire tour. Highly recommend Tour DE for solo adventurers.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="pic3.jpeg" alt="" />
+          <h3>Hasib Chowdhury</h3>
+          <p>
+            I've used Tour DE for three trips now—every time they deliver. Flights, hotels, and even local experiences are all top notch.
+          </p>
+          <div class="stars"> 
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="pic4.jpeg" alt="" />
+          <h3>Rafiq Ahmed</h3>
+          <p>Affordable packages with luxury vibes.</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+        </div>
     </div>
-  </div>
-</section> 
-<!-- Packages Section Ends -->
+  </div> 
+</section>
+<!-- review section ends --> 
+
+    <!-- footer section  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Need Help ?</h3>
+          <p>
+            We're here for you 24/7!</p>
+            <p>Reach out to us for the support you need.
+          </p>
+        </div>
+        <div class="box">
+          <h3>branch location</h3> 
+           <p>
+    House 326, Road 03 <br>
+    Block F, Level 1, Bashundhara,<br>
+    Dhaka
+  </p>
+        </div>
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#">home</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy & Cookies Statement</a>
+          <a href="#">Refund Policy</a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#">facebook</a>
+          <a href="#">instagram</a>
+          <a href="#">twitter</a>
+          <a href="#">linkedin</a>
+        </div>
+      </div>
+
+      <h1 class="credit">
+        created by <span> Tour de 2025 </span> | all rights reserved!
+      </h1>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
