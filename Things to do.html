@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Things to Do</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .slider-section {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 90%;
+      object-fit: cover;
+      display: none;
+      z-index: 0;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .overlay h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 50px;
+      overflow: hidden;
+      padding: 10px 20px;
+      width: 400px;
+      margin: auto;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .search-box button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0 10px;
+    }
+
+    .top-experiences {
+      background: #f4f4f4;
+      color: #333;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow-x: auto;
+      padding: 20px 0;
+      width: 90%;
+      margin: auto;
+    }
+
+    .slider {
+      display: flex;
+      flex-wrap: nowrap;
+      width: max-content;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,165,0,0.3);
+      margin: 0 10px;
+      flex: 0 0 auto;
+      text-align: left;
+      width: 250px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+
+    .location {
+      background: orange;
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-weight: bold;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .rating, .price {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 8px;
+      font-size: 20px;
+      z-index: 2;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDER & SEARCH -->
+  <div class="slider-section">
+    <img src="Things to do 1.jpg" class="slide active">
+    <img src="Things to do 2.jpg" class="slide">
+    <img src="Things to do 3.jpg" class="slide">
+    <img src = "cruise.jpg" class ="slide"> 
+
+    <div class="overlay">
+      <h1>Book activities that travelers love</h1>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by destination">
+        <button onclick="searchHotel()"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP EXPERIENCES -->
+  <section class="top-experiences">
+    <h2>Can't-miss experiences</h2>
+
+    <div class="slider-container">
+      <button class="nav-btn prev">&#10094;</button>
+      <div class="slider" id="slider">
+        <div class="card">
+          <img src="Pasta.jpg" alt="Pasta Class">
+          <div class="card-content">
+            <div class="location">Florence</div>
+            <div class="title">Pasta Cooking Class with Unlimited Wine</div>
+            <div class="rating">⭐ 5.0 (2,632)</div>
+            <div class="price">from $65</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="river.jpg" alt="Seine River">
+          <div class="card-content">
+            <div class="location">Paris</div>
+            <div class="title">Seine River Gourmet Dinner</div>
+            <div class="rating">⭐ 4.3 (2,729)</div>
+            <div class="price">from $149</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Grand Canyon.jpg" alt="Grand Canyon">
+          <div class="card-content">
+            <div class="location">Las Vegas</div>
+            <div class="title">Grand Canyon & Hoover Dam Tour</div>
+            <div class="rating">⭐ 4.9 (13,194)</div>
+            <div class="price">from $89</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Douro Valley.jpg" alt="Douro Valley">
+          <div class="card-content">
+            <div class="location">Porto</div>
+            <div class="title">Douro Valley Wine Tour</div>
+            <div class="rating">⭐ 4.9 (9,545)</div>
+            <div class="price">from $119</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Sushi Making Class.jpg" alt="Sushi Class">
+          <div class="card-content">
+            <div class="location">Tokyo</div>
+            <div class="title">Sushi Making Class</div>
+            <div class="rating">⭐ 5.0 (3,101)</div>
+            <div class="price">from $80</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="BBQ Dinner.jpeg" alt="Desert Safari">
+          <div class="card-content">
+            <div class="location">Dubai</div>
+            <div class="title">Desert Safari & BBQ Dinner</div>
+            <div class="rating">⭐ 4.8 (7,540)</div>
+            <div class="price">from $99</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Statue of Liberty Tour.jpg" alt="Statue of Liberty">
+          <div class="card-content">
+            <div class="location">New York</div>
+            <div class="title">Statue of Liberty Tour</div>
+            <div class="rating">⭐ 4.7 (5,289)</div>
+            <div class="price">from $75</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="Harbor Cruise with Dinner.jpg" alt="Harbor Cruise">
+          <div class="card-content">
+            <div class="location">Sydney</div>
+            <div class="title">Harbor Cruise with Dinner</div>
+            <div class="rating">⭐ 4.9 (4,120)</div>
+            <div class="price">from $110</div>
+          </div>
+        </div>
+      </div>
+      <button class="nav-btn next">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    // Background slider fade
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // Horizontal card scroll
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    const sliderContainer = document.querySelector('.slider-container');
+    const scrollStep = 270;
+
+    nextBtn.addEventListener('click', () => {
+      sliderContainer.scrollBy({
+        left: scrollStep,
+        behavior: 'smooth'
+      });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      sliderContainer.scrollBy({
+        left: -scrollStep,
+        behavior: 'smooth'
+      });
+    });
+
+    function searchHotel() {
+      const query = document.getElementById('searchInput').value;
+      alert(`Searching for: ${query}`);
+    }
+  </script>
+
+</body>
+</html>

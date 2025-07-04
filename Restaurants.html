@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TourDe | Restaurants</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: url('Food.jpg') no-repeat center center / cover;
+      min-height: 60vh;
+      padding: 3em 1em;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 50px;
+      overflow: hidden;
+      padding: 10px 20px;
+      width: 400px;
+      max-width: 90%;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 50px;
+    }
+
+    .search-box button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #ffa500;
+    }
+
+    .info-section {
+      background: white;
+      padding: 2em;
+      margin: 2em auto;
+      max-width: 1100px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+
+    .info-section h3 {
+      margin-bottom: 0.5em;
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+
+    .restaurant-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .restaurant-card:hover {
+      transform: scale(1.02);
+    }
+
+    .restaurant-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .restaurant-content {
+      padding: 1em;
+    }
+
+    .restaurant-content h4 {
+      margin: 0.5em 0;
+    }
+
+    .stars {
+      color: #ffa500;
+    }
+
+    .cuisines {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 2em;
+    }
+
+    .cuisine {
+      background: whitesmoke  ;
+      padding: 1em;
+      border-radius: 10px;
+      flex: 1 1 200px;
+      text-align: center;
+      box-shadow: orange ;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #333;
+      color: white;
+    }
+
+    footer span {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Find your perfect restaurant</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="City or restaurant name">
+      <button onclick="searchrestaurant()"><i class="fas fa-search"></i></button>
+    </div>
+  </header>
+
+  <div class="info-section">
+    <h3>Best Restaurants Near You</h3>
+    <p>Popular food spots with great reviews and affordable prices.</p>
+
+    <div class="restaurant-grid">
+      <div class="restaurant-card">
+        <img src="Food 1.jpg" alt="Pizza Place">
+        <div class="restaurant-content">
+          <h4>La Pizzeria</h4>
+          <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+      </div>
+      <div class="restaurant-card">
+        <img src="Food 2.jpg" alt="Sushi Spot">
+        <div class="restaurant-content">
+          <h4>Sushi Delight</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Tokyo, Japan</p>
+          <p class="stars">★★★★★</p>
+        </div>
+      </div>
+      <div class="restaurant-card">
+        <img src="Food 3.jpg" alt="Tattu Restaurant and Bar">
+        <div class="restaurant-content">
+          <h4>Tattu Restaurant and Bar</h4>
+          <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Cafés You'll Love</h3>
+    <div class="restaurant-grid">
+      <div class="restaurant-card cafe-card">
+        <img src="Cafe 1.jpg" alt="Cafe One">
+        <div class="restaurant-content">
+          <h4>Bean & Brew</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+      </div>
+      <div class="restaurant-card cafe-card">
+        <img src="Cafe 2.jpg" alt="Elote Cafe">
+        <div class="restaurant-content">
+          <h4>Elote Cafe</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Sedona, United States</p>
+          <p class="stars">★★★★★</p>
+        </div>
+      </div>
+      <div class="restaurant-card cafe-card">
+        <img src="cafe 3.jpg" alt="Café Central">
+        <div class="restaurant-content">
+          <h4>Café Central</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Vienna, Austria</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cuisines">
+      <div class="cuisine">
+        <i class="fas fa-utensils fa-2x"></i>
+        <h4>Italian</h4>
+        <p>Pasta, pizza, and more!</p>
+      </div>
+      <div class="cuisine">
+        <i class="fas fa-fish fa-2x"></i>
+        <h4>Japanese</h4>
+        <p>Sushi, ramen & tempura</p>
+      </div>
+      <div class="cuisine">
+        <i class="fas fa-burger fa-2x"></i>
+        <h4>American</h4>
+        <p>Burgers, fries & shakes</p>
+      </div>
+      <div class="cuisine">
+        <i class="fas fa-pepper-hot fa-2x"></i>
+        <h4>Mexican</h4>
+        <p>Tacos, nachos, and spice!</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <h1 class="credit">Created by <span>Tour De 2025</span> | All rights reserved!</h1>
+  </footer>
+
+  <script>
+    function searchrestaurant() {
+      const input = document.getElementById('searchInput').value;
+      if (input) {
+        alert("Searching restaurants in: " + input);
+      } else {
+        alert("Please enter a location or restaurant name.");
+      }
+    }
+  </script>
+
+</body>
+</html>

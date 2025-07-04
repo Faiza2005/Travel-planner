@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TourDe | Flights</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: url('Flights.jpg') no-repeat center top / cover;
+      min-height: 60vh;
+      padding: 3em 1em;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    .search-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin-top: 1em;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      flex-wrap: wrap;
+      margin-bottom: 1em;
+    }
+
+    .options label {
+      font-weight: bold;
+      cursor: pointer;
+      color: black;
+    }
+
+    .search-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar input,
+    .search-bar select {
+      padding: 0.6em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      min-width: 150px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      margin: 1em 0;
+      flex-wrap: wrap;
+      color: black;
+    }
+
+    #findFlights {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 0.7em 1.5em;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .promo-section {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+      background: white;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 1000px;
+      margin: 2em auto;
+    }
+
+    .promo-item {
+      text-align: center;
+      flex: 1 1 30%;
+      min-width: 200px;
+    }
+
+    .promo-icon {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    .promo-title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .popular-destinations {
+      max-width: 1000px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    .popular-destinations h2 {
+      text-align: center;
+    }
+
+    .destination-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+
+    .destination {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      width: 180px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding-bottom: 0.5em; 
+    }
+
+    .destination img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .destination p {
+      font-weight: bold;
+      color: orange;
+      margin-bottom: 0.5em;
+    }
+
+    .destination button {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .info-section {
+      background: white;
+      padding: 2em;
+      margin: 2em auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #333;
+      color: white;
+    }
+
+    footer span {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Find the Best Flight for the Right Price</h1>
+    <div class="search-section">
+      <div class="options">
+        <label><input type="radio" name="trip" checked> Round Trip</label>
+        <label><input type="radio" name="trip"> One-way</label>
+        <label><input type="radio" name="trip"> Multi-city</label>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="From: Enter departure city">
+        <input type="text" placeholder="To: Enter destination city">
+        <input type="date">
+        <input type="date">
+        <select>
+          <option>2 People, Economy</option>
+          <option>1 Person, Economy</option>
+          <option>Business Class</option>
+          <option>First Class</option>
+        </select>
+      </div>
+      <div class="filters">
+        <label><input type="checkbox"> Prefer nonstop</label>
+        <label><input type="checkbox"> Include nearby airports</label>
+      </div>
+      <button id="findFlights">Find Flights</button>
+    </div>
+  </header>
+
+  <div class="promo-section">
+    <div class="promo-item">
+      <div class="promo-icon">✈️</div>
+      <div class="promo-title">Get the Best Deals</div>
+      <div>Compare flight prices from hundreds of airlines and travel sites in one place.</div>
+    </div>
+    <div class="promo-item">
+      <div class="promo-icon">⚙️</div>
+      <div class="promo-title">Customise Your Results</div>
+      <div>Filter for your preferred airlines, flight times, desired price, and more.</div>
+    </div>
+    <div class="promo-item">
+      <div class="promo-icon">✅</div>
+      <div class="promo-title">Search Without Worry</div>
+      <div>We’re completely free to use—no hidden charges or fees on flight prices at all.</div>
+    </div>
+  </div>
+
+  <div class="popular-destinations">
+    <h2>Popular Destinations</h2>
+    <div class="destination-grid">
+      <div class="destination">
+        <img src="Fly to paris.jpg" alt="Paris">
+        <h4>Paris, France</h4>
+        <p>$350 - $700</p>
+        <button>Book Your Flight</button>
+      </div>
+      <div class="destination">
+        <img src="Flight 2.jpg" alt="New York">
+        <h4>New York, USA</h4>
+        <p>$300 - $650</p>
+        <button>Book Your Flight</button>
+      </div>
+      <div class="destination">
+        <img src="Flight 1.jpg" alt="Istanbul">
+        <h4>Istanbul, Turkey</h4>
+        <p>$400 - $850</p>
+        <button>Book Your Flight</button>
+      </div>
+      <div class="destination">
+        <img src="Bali trip.jpg" alt="Bali">
+        <h4>Bali, Indonesia</h4>
+        <p>$250 - $600</p>
+        <button>Book Your Flight</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>Best Flight Deals</h3>
+    <p>No need to shop multiple sites any more. We've already done that by searching hundreds of cheap flights for you—scouring premium airlines, low-cost carriers and the biggest online travel agencies for the best deals. We'll even check alternate dates and nearby airports to help you save money, time, even sanity on airline tickets.</p>
+
+    <h3>Flight Search Filters</h3>
+    <p>Our filters make it a snap to easily find the cheap flight that's right for you. Find direct flights that are nonstop, avoid early departure times—or try our Best Value filter, which sorts based on price, duration, and additional factors.</p>
+
+    <h3>In-Flight Experience</h3>
+    <p>Want Wi-Fi? More legroom? Or even a seat that allows you to sleep perfectly flat? TourDe Flights now makes it easier to find the amenities that can make or break your flight. Find which flights include Wi-Fi, live TV, power outlets, free baggage, and more.</p>
+  </div>
+
+  <footer>
+    <h1 class="credit">created by <span>Tour de 2025</span> | all rights reserved!</h1>
+  </footer>
+
+</body>
+</html>

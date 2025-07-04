@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TourDe | Travel Documents</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #ffe9d6, #fdfdfd);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #555;
+    }
+
+    .doc-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .hotel-card, .documents-panel, .voucher-preview {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .hotel-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tags span {
+      background: #e0f7fa;
+      padding: 4px 8px;
+      margin: 4px;
+      display: inline-block;
+      border-radius: 5px;
+      font-size: 0.8rem;
+    }
+
+    .status .booked {
+      color: green;
+      font-weight: bold;
+    }
+
+    .doc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .doc-item img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .voucher-preview img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .email-box {
+      background: #f2f2ff;
+      border-left: 5px solid #6c63ff;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    button {
+      background: #ffa500;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Your Travel Documents</h1>
+    <p>Keep all your important travel documents in one place — accessible anytime, anywhere.</p>
+  </header>
+
+  <div class="doc-container">
+    <div class="hotel-card">
+      <img src="https://source.unsplash.com/300x200/?hotel,resort" alt="Hotel Image">
+      <h2>Yanyan Resort Ubud <span>Hotel</span></h2>
+      <div class="tags">
+        <span>#sustainable</span><span>#hike</span>
+      </div>
+      <p>Perfect for your next getaway with stunning views and nature walks. Great food and cocktails too.</p>
+      <div class="status">Status: <span class="booked">Booked</span></div>
+      <div class="price">Price: €389</div>
+      <div class="doc-count">Documents: <span>5</span></div>
+      <div class="email-box">📩 Forward your reservations to: <code>trip@tourde.com</code></div>
+    </div>
+
+    <div class="documents-panel">
+      <h3>Upload / View Documents</h3>
+      <input type="text" value="trip@tourde.com" readonly />
+      <button>Copy Email</button>
+
+      <div class="doc-item"><img src="visa icon.png"> <span>Visa.pdf </span><button>Add</button></div>
+      <div class="doc-item"><img src="passport.png" ><span>Passport.pdf</span><button>Add</button></div>
+      <div class="doc-item"><img src="air tic.png" ><span>AirTicket.pdf</span><button>Add</button></div>
+      <div class="doc-item"><img src="nid.jpg"><span>NationalID.pdf</span><button>Add</button></div>
+      <div class="doc-item"><img src="hotel icon.png"><span>HotelReservation.pdf</span><button>Add</button></div>
+    </div>
+
+    <div class="voucher-preview">
+      <h3>Voucher Preview</h3>
+      <img src="https://source.unsplash.com/300x400/?boardingpass,ticket" alt="Voucher Preview">
+    </div>
+  </div>
+
+</body>
+</html>
